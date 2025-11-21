@@ -1,6 +1,4 @@
-# QA Automation Framework – Online Application Testing
-
-This repository contains a scalable and maintainable test automation framework built using **Selenium WebDriver with Java** for UI testing and REST-assured for API testing. The framework follows the **Page Object Model (POM)** design pattern and includes utility classes, configuration management, and helper methods to support future test expansion.
+This repository contains a scalable and maintainable test automation framework built using **Playwright with Java**, **Maven**, and **TestNG** for UI testing. The framework follows the **Page Object Model (POM)** design pattern and includes configuration files, helper utilities, and reusable methods to support future test expansion.
 
 ---
 
@@ -9,7 +7,7 @@ This repository contains a scalable and maintainable test automation framework b
 ```
 project-root/
 │
-├── pom.xml                    # Maven dependencies
+├── pom.xml                    # Maven dependencies including Playwright and TestNG
 ├── README.md                   # Project documentation
 │
 ├── src/main/java/
@@ -24,7 +22,7 @@ project-root/
 │
 └── src/test/java/
     ├── tests/
-    │   ├── ContactFormTest.java # UI tests for Contact form
+    │   ├── ContactTest.java # UI tests for Contact form
     │   └── CartTest.java        # UI tests for Cart functionality
     └── api/
         └── APITests.java        # API layer tests (if any)
@@ -34,7 +32,7 @@ project-root/
 
 ## **Features**
 
-1. **UI Testing**
+1. **UI Testing with Playwright**
    - Form submission validation
    - Add to cart and update quantity
    - Verification of validation and success messages
@@ -44,7 +42,11 @@ project-root/
    - Configurable environment variables (URL, browser, etc.)
    - Helper classes for reusable code
 
-3. **API Testing (Optional)**
+3. **TestNG Integration**
+   - Parallel execution
+   - Test grouping and prioritization
+
+4. **API Testing (Optional)**
    - Can be extended to test REST API endpoints
 
 ---
@@ -54,7 +56,8 @@ project-root/
 - Java JDK 11+
 - Maven 3+
 - IntelliJ IDEA or any IDE
-- ChromeDriver (or other browser driver)
+- Playwright installed via Maven dependencies
+- Browser binaries managed by Playwright (automatic download)
 
 ---
 
@@ -73,7 +76,7 @@ cd qa-automation-framework
 mvn clean install
 ```
 
-3. **Run tests**
+3. **Run tests using TestNG**
 
 ```bash
 # Run all tests
@@ -88,7 +91,7 @@ mvn -Dtest=ContactFormTest test
 ## **Design Choices**
 
 - **Page Object Model (POM):** Improves maintainability and reusability.
-- **Helper/Utility Classes:** Encapsulates common actions like waits, random data generation, and input handling.
+- **Helper/Utility Classes:** Encapsulates common actions like waits, input handling, and random data generation.
 - **Config Management:** Centralizes environment settings (URL, browser type) for flexibility.
 - **Scalability:** Framework can easily accommodate new UI pages or API endpoints.
 
@@ -96,16 +99,16 @@ mvn -Dtest=ContactFormTest test
 
 ## **Future Enhancements**
 
-- Integrate **TestNG or JUnit** for advanced reporting.
-- Add **Cross-browser support**.
-- Implement **API testing with REST-assured** for backend verification.
-- Add **CI/CD integration** using GitHub Actions or Jenkins.
+- Cross-browser testing using Playwright capabilities.
+- Advanced reporting using TestNG listeners or Allure Reports.
+- Integration with CI/CD pipelines like GitHub Actions or Jenkins.
+- API testing with REST-assured or Playwright API testing capabilities.
 
 ---
 
 ## **Author**
 
-**Your Name** – QA Automation Engineer  
+Md Zabed
 
-[GitHub Profile](https://github.com/yourusername)
+[GitHub Profile](https://github.com/Zaved101)
 
